@@ -1,0 +1,250 @@
+<!-- Save as: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      background:#111827;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:2px solid #2563eb;
+    }
+
+    header h1{
+      color:#60a5fa;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#60a5fa;
+    }
+
+    .hero{
+      height:90vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h2{
+      font-size:50px;
+      color:#60a5fa;
+    }
+
+    .hero p{
+      margin-top:15px;
+      font-size:20px;
+      max-width:700px;
+    }
+
+    .btn{
+      margin-top:25px;
+      padding:12px 25px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+    }
+
+    section{
+      padding:60px 10%;
+    }
+
+    .section-title{
+      font-size:35px;
+      margin-bottom:25px;
+      color:#60a5fa;
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+      transition:0.3s;
+      border:1px solid #334155;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      border-color:#60a5fa;
+    }
+
+    .project{
+      background:#1e293b;
+      padding:25px;
+      border-radius:12px;
+      margin-top:20px;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      margin-top:40px;
+      border-top:2px solid #2563eb;
+    }
+
+    .highlight{
+      color:#60a5fa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>DevOps Portfolio</h1>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I'm <span class="highlight">Mahalakshmi</span></h2>
+
+    <p>
+      DevOps & Cloud Enthusiast with experience in Docker, GitLab CI/CD,
+      AWS EC2, Kubernetes, Linux, and Networking.
+    </p>
+
+    <a href="#projects" class="btn">View Projects</a>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <p>
+      I am passionate about DevOps, Cloud Computing, and Automation.
+      I have hands-on experience in CI/CD pipelines, Docker containerization,
+      AWS cloud services, GitLab pipelines, and Linux server management.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+      <div class="card">
+        <h3>Docker</h3>
+        <p>Containerization & Image Management</p>
+      </div>
+
+      <div class="card">
+        <h3>Git & GitLab</h3>
+        <p>Version Control & CI/CD Pipelines</p>
+      </div>
+
+      <div class="card">
+        <h3>AWS</h3>
+        <p>EC2, CloudWatch, IAM</p>
+      </div>
+
+      <div class="card">
+        <h3>Kubernetes</h3>
+        <p>Deployment & Scaling</p>
+      </div>
+
+      <div class="card">
+        <h3>Linux</h3>
+        <p>Server Administration</p>
+      </div>
+
+      <div class="card">
+        <h3>Networking</h3>
+        <p>Routing, VLAN, Firewall, ACL</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project">
+      <h3>CI/CD Pipeline Project</h3>
+
+      <p>
+        Implemented automated CI/CD pipeline using GitLab CI/CD.
+        Code pushed to GitLab triggers automatic build, test,
+        Docker image creation, and deployment to AWS EC2.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Dockerized Web Application</h3>
+
+      <p>
+        Containerized Node.js application using Docker and deployed
+        on cloud infrastructure.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Network Security Lab</h3>
+
+      <p>
+        Configured VLANs, ACLs, HSRP, DHCP, and Palo Alto Firewall
+        for enterprise-style network security implementation.
+      </p>
+    </div>
+
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <p>Email: yourmail@example.com</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    <p>GitHub: github.com/yourgithub</p>
+  </section>
+
+  <footer>
+    <p>© 2026 DevOps Portfolio | Built by Mahalakshmi</p>
+  </footer>
+
+</body>
+</html>
