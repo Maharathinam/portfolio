@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizFlow Solutions | Affordable Billing, POS & Business Software</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="BizFlow Solutions provides simple, modern, and affordable billing software, POS systems, GST invoicing, inventory management, and business websites for small retail shops and enterprises.">
+  <meta name="keywords" content="Billing software, POS software, GST invoicing, inventory management, mobile shop billing, meat shop POS, retail software, small business website">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Subtle background grid pattern */
+    .bg-subtle-grid {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    /* Sleek light scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f8fafc; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700 font-sans">
+
+  <!-- ==================== STICKY NAVBAR ==================== -->
+  <header id="navbar" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm shadow-blue-500/20 group-hover:bg-blue-700 transition-colors">
+            <i data-lucide="layers" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <div class="text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors flex items-center gap-1">
+              BizFlow <span class="text-blue-600 font-semibold">Solutions</span>
+            </div>
+            <p class="text-[11px] font-medium text-slate-500 leading-none">Smart Tools. Simpler Business.</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="#services" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Services</a>
+          <a href="#demos" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Demo Systems</a>
+          <a href="#why-us" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Why Choose Us</a>
+          <a href="#about" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">About</a>
+          <a href="#quote" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Pricing & Quote</a>
+          <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'd%20like%20to%20inquire%20about%20your%20software%20solutions." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+            <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <button onclick="openQuoteModal('General Inquiry')" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm shadow-blue-600/20 transition-all">
+            <span>Get a Quote</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="flex md:hidden items-center gap-2">
+          <button onclick="openQuoteModal('Quick Quote')" class="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 rounded-lg">
+            Quote
+          </button>
+          <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
+      <div class="flex flex-col space-y-2">
+        <a href="#services" onclick="closeMobileMenu()" class="px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Services</a>
+        <a href="#demos" onclick="closeMobileMenu()" class="px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Demo Systems</a>
+        <a href="#why-us" onclick="closeMobileMenu()" class="px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Why Choose Us</a>
+        <a href="#about" onclick="closeMobileMenu()" class="px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">About</a>
+        <a href="#quote" onclick="closeMobileMenu()" class="px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Pricing & Quote</a>
+        <a href="#contact" onclick="closeMobileMenu()" class="px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Contact</a>
+      </div>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'd%20like%20to%20enquire%20about%20your%20billing%20software." target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg">
+          <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
+          Chat on WhatsApp
+        </a>
+        <button onclick="closeMobileMenu(); openQuoteModal('Mobile Menu Quote');" class="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg shadow-sm">
+          <span>Request a Free Quote</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative overflow-hidden pt-12 pb-20 md:pt-16 md:pb-28 bg-white">
+    <div class="absolute inset-0 bg-subtle-grid pointer-events-none opacity-40"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-blue-50/60 to-transparent pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Headline & Pitch -->
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs sm:text-sm font-semibold tracking-wide">
+          <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i>
+          <span>Affordable Digital Solutions Built for Small Businesses</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+          Smart Tools. <br class="hidden sm:inline">
+          <span class="text-blue-600">Simpler Business.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Fast, modern, and affordable software tailored for small retail stores, supermarkets, mobile shops, meat shops, and trade businesses. Zero complicated jargon, no monthly per-user traps, and works 100% offline.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <button onclick="openQuoteModal('Hero CTA Quote')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base rounded-xl shadow-md shadow-blue-600/20 transition-all">
+            <span>Get a Free Quote</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+          <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'd%20like%20to%20get%20a%20quote%20and%20live%20demo%20for%20my%20shop." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm sm:text-base rounded-xl transition-all border border-slate-200/80">
+            <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Trust Value Badges -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-600 font-medium">
+          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> 100% Offline Capable</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> Works on Any PC / Laptop</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> Ready in 24 to 48 Hours</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i> Zero Hidden Costs</span>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DASHBOARD PREVIEW SIMULATOR -->
+      <div class="mt-14 max-w-5xl mx-auto">
+        <div class="text-center mb-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            Interactive Live Preview • Click Below to Test
+          </span>
+        </div>
+
+        <div class="w-full bg-white rounded-2xl border border-slate-200/90 shadow-xl overflow-hidden">
+          
+          <!-- Mockup Title Bar -->
+          <div class="bg-slate-900 text-white px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold tracking-wide text-slate-200 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                BizFlow POS v2.4 • Store Counter #01 (Offline Ready)
+              </span>
+            </div>
+
+            <!-- Tab Switchers -->
+            <div class="flex items-center bg-slate-800/90 p-1 rounded-lg border border-slate-700">
+              <button onclick="switchPreviewTab('pos')" id="tab-btn-pos" class="px-3 py-1.5 rounded-md text-xs font-medium bg-blue-600 text-white flex items-center gap-1.5 transition-all">
+                <i data-lucide="receipt" class="w-3.5 h-3.5"></i> <span>POS Billing</span>
+              </button>
+              <button onclick="switchPreviewTab('sales')" id="tab-btn-sales" class="px-3 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-all">
+                <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i> <span>Sales & GST</span>
+              </button>
+              <button onclick="switchPreviewTab('inventory')" id="tab-btn-inventory" class="px-3 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-all">
+                <i data-lucide="package" class="w-3.5 h-3.5"></i> <span>Live Stock</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab 1: POS Billing Simulator -->
+          <div id="tab-content-pos" class="p-4 sm:p-6 bg-slate-50/50">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              
+              <!-- Cart Table (7 cols) -->
+              <div class="lg:col-span-7 flex flex-col gap-4">
+                <!-- Barcode Bar -->
+                <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2 flex-grow">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+                    <input type="text" readonly value="Barcode / SKU Scanner (F2 Active)" class="w-full text-xs sm:text-sm text-slate-500 bg-transparent outline-none cursor-default font-mono">
+                  </div>
+                  <span class="text-[11px] font-medium bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                    Scanner Ready
+                  </span>
+                </div>
+
+                <!-- Items list -->
+                <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex-grow">
+                  <div class="px-4 py-2.5 bg-slate-50 border-b border-slate-200 text-xs font-semibold text-slate-600 grid grid-cols-12">
+                    <span class="col-span-6">Item Name</span>
+                    <span class="col-span-3 text-center">Qty</span>
+                    <span class="col-span-3 text-right">Amount (₹)</span>
+                  </div>
+                  <div id="pos-items-container" class="divide-y divide-slate-100 max-h-64 overflow-y-auto">
+                    <!-- Populated dynamically by JS -->
+                  </div>
+                </div>
+
+                <!-- Quick Add Buttons -->
+                <div>
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                    + Click to Quick-Add Popular Items:
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <button onclick="addQuickItem('Toor Dal (1kg)', 140, 0.05)" class="px-2.5 py-1 text-xs font-medium text-slate-700 bg-white hover:bg-blue-50 border border-slate-200 rounded-lg shadow-2xs flex items-center gap-1.5 transition-all">
+                      <i data-lucide="plus" class="w-3 h-3 text-blue-500"></i> Toor Dal (1kg) <span class="text-slate-400 font-mono">₹140</span>
+                    </button>
+                    <button onclick="addQuickItem('Wheat Flour Aata (5kg)', 245, 0.05)" class="px-2.5 py-1 text-xs font-medium text-slate-700 bg-white hover:bg-blue-50 border border-slate-200 rounded-lg shadow-2xs flex items-center gap-1.5 transition-all">
+                      <i data-lucide="plus" class="w-3 h-3 text-blue-500"></i> Wheat Flour (5kg) <span class="text-slate-400 font-mono">₹245</span>
+                    </button>
+                    <button onclick="addQuickItem('Tea Powder Gold (250g)', 125, 0.05)" class="px-2.5 py-1 text-xs font-medium text-slate-700 bg-white hover:bg-blue-50 border border-slate-200 rounded-lg shadow-2xs flex items-center gap-1.5 transition-all">
+                      <i data-lucide="plus" class="w-3 h-3 text-blue-500"></i> Tea Powder (250g) <span class="text-slate-400 font-mono">₹125</span>
+                    </button>
+                    <button onclick="addQuickItem('Organic Honey (250g)', 180, 0.12)" class="px-2.5 py-1 text-xs font-medium text-slate-700 bg-white hover:bg-blue-50 border border-slate-200 rounded-lg shadow-2xs flex items-center gap-1.5 transition-all">
+                      <i data-lucide="plus" class="w-3 h-3 text-blue-500"></i> Honey (250g) <span class="text-slate-400 font-mono">₹180</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Checkout & Invoice Summary (5 cols) -->
+              <div class="lg:col-span-5 flex flex-col justify-between bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+                    <span class="text-sm font-bold text-slate-800">Invoice Calculation</span>
+                    <span class="text-xs text-slate-500">Bill #INV-2489</span>
+                  </div>
+
+                  <div class="space-y-2 py-3 text-xs sm:text-sm text-slate-600 border-b border-slate-100">
+                    <div class="flex justify-between">
+                      <span id="pos-subtotal-label">Subtotal</span>
+                      <span id="pos-subtotal" class="font-semibold text-slate-800">₹0.00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center text-emerald-600">
+                      <span class="flex items-center gap-1.5">
+                        <span>Store Discount</span>
+                        <select id="pos-discount-select" onchange="calculateBill()" class="bg-emerald-50 text-emerald-700 text-xs px-1.5 py-0.5 rounded border border-emerald-200 font-medium">
+                          <option value="0">0%</option>
+                          <option value="5" selected>5%</option>
+                          <option value="10">10%</option>
+                        </select>
+                      </span>
+                      <span id="pos-discount">-₹0.00</span>
+                    </div>
+
+                    <div class="flex justify-between text-slate-500 text-xs">
+                      <span>GST (CGST + SGST)</span>
+                      <span id="pos-tax">+₹0.00</span>
+                    </div>
+                  </div>
+
+                  <div class="pt-3 pb-4 flex items-baseline justify-between">
+                    <div>
+                      <span class="text-xs uppercase tracking-wider font-semibold text-slate-400 block">Net Payable</span>
+                      <span id="pos-grand-total" class="text-2xl sm:text-3xl font-extrabold text-blue-600 tracking-tight">₹0.00</span>
+                    </div>
+                    <span class="text-[11px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full border border-blue-100">
+                      Round Off Applied
+                    </span>
+                  </div>
+
+                  <!-- Payment Mode Selector -->
+                  <div class="mb-4">
+                    <label class="text-xs font-semibold text-slate-500 block mb-1.5">Payment Mode</label>
+                    <div class="grid grid-cols-3 gap-2">
+                      <button type="button" onclick="selectPaymentMode('upi')" id="pay-btn-upi" class="p-2 rounded-lg border border-blue-600 bg-blue-50 text-blue-700 font-semibold text-xs flex flex-col items-center justify-center">
+                        <i data-lucide="qr-code" class="w-4 h-4 mb-1"></i> UPI QR
+                      </button>
+                      <button type="button" onclick="selectPaymentMode('cash')" id="pay-btn-cash" class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs flex flex-col items-center justify-center">
+                        <i data-lucide="banknote" class="w-4 h-4 mb-1"></i> Cash
+                      </button>
+                      <button type="button" onclick="selectPaymentMode('card')" id="pay-btn-card" class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs flex flex-col items-center justify-center">
+                        <i data-lucide="credit-card" class="w-4 h-4 mb-1"></i> Card
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Print & Complete Button -->
+                <div class="space-y-2">
+                  <button onclick="simulatePrintReceipt()" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-semibold rounded-xl shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="printer" class="w-4 h-4"></i>
+                    <span>Complete Sale & Print Receipt</span>
+                  </button>
+
+                  <div id="print-alert" class="hidden p-2.5 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-800 text-xs flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                    <span><strong>Receipt Sent to Thermal Printer!</strong> Cash drawer opened & ledger recorded.</span>
+                  </div>
+
+                  <p class="text-[11px] text-center text-slate-400">
+                    Supports EPSON, TVS, NGX, Posiflex, and standard thermal printers.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tab 2: Sales & GST Summary -->
+          <div id="tab-content-sales" class="hidden p-4 sm:p-6 bg-slate-50/50 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-xs font-medium text-slate-500">Today's Total Sales</span>
+                <div class="text-2xl font-extrabold text-slate-900 mt-1">₹34,820.00</div>
+                <div class="text-xs text-emerald-600 font-medium mt-1 flex items-center gap-1">
+                  <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> 54 Invoices generated
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-xs font-medium text-slate-500">Total GST Collected</span>
+                <div class="text-2xl font-extrabold text-blue-600 mt-1">₹2,845.50</div>
+                <div class="text-xs text-slate-500 font-medium mt-1">CGST: ₹1,422.75 | SGST: ₹1,422.75</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-xs font-medium text-slate-500">UPI vs Cash Split</span>
+                <div class="text-2xl font-extrabold text-slate-900 mt-1">68% / 32%</div>
+                <div class="text-xs text-slate-500 font-medium mt-1">UPI: ₹23,677 | Cash: ₹11,143</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                <span class="text-xs font-medium text-slate-500">Avg. Basket Size</span>
+                <div class="text-2xl font-extrabold text-slate-900 mt-1">₹644.80</div>
+                <div class="text-xs text-emerald-600 font-medium mt-1">4.8 items per customer</div>
+              </div>
+            </div>
+
+            <!-- Transactions Table -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="px-5 py-3.5 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Recent Customer Invoices</h4>
+                  <p class="text-xs text-slate-500">Real-time ledger with automated GST filing sync</p>
+                </div>
+                <button onclick="openQuoteModal('GST Software Demo')" class="text-xs font-semibold text-blue-600 hover:underline">
+                  Export GSTR-1 Summary →
+                </button>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs sm:text-sm">
+                  <thead class="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200 text-xs">
+                    <tr>
+                      <th class="py-2.5 px-4">Invoice #</th>
+                      <th class="py-2.5 px-4">Time</th>
+                      <th class="py-2.5 px-4">Customer</th>
+                      <th class="py-2.5 px-4">Payment</th>
+                      <th class="py-2.5 px-4 text-right">GST (₹)</th>
+                      <th class="py-2.5 px-4 text-right">Amount (₹)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 text-slate-700">
+                    <tr>
+                      <td class="py-2.5 px-4 font-mono font-medium text-blue-600">INV-2488</td>
+                      <td class="py-2.5 px-4 text-slate-500">12:42 PM</td>
+                      <td class="py-2.5 px-4 font-medium">Walk-in Counter</td>
+                      <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-medium text-xs">UPI QR</span></td>
+                      <td class="py-2.5 px-4 text-right">₹68.50</td>
+                      <td class="py-2.5 px-4 text-right font-bold text-slate-900">₹840.00</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-4 font-mono font-medium text-blue-600">INV-2487</td>
+                      <td class="py-2.5 px-4 text-slate-500">12:35 PM</td>
+                      <td class="py-2.5 px-4 font-medium">Kavitha R.</td>
+                      <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 font-medium text-xs">Cash</span></td>
+                      <td class="py-2.5 px-4 text-right">₹112.00</td>
+                      <td class="py-2.5 px-4 text-right font-bold text-slate-900">₹1,450.00</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2.5 px-4 font-mono font-medium text-blue-600">INV-2486</td>
+                      <td class="py-2.5 px-4 text-slate-500">12:18 PM</td>
+                      <td class="py-2.5 px-4 font-medium">Sri Ganesh Traders (B2B)</td>
+                      <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-medium text-xs">Bank Transfer</span></td>
+                      <td class="py-2.5 px-4 text-right">₹1,840.00</td>
+                      <td class="py-2.5 px-4 text-right font-bold text-slate-900">₹12,050.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Live Stock -->
+          <div id="tab-content-inventory" class="hidden p-4 sm:p-6 bg-slate-50/50 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Live Inventory Health</h4>
+                <p class="text-xs text-slate-500">Auto-updates with every counter scan and purchase inward</p>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200 flex items-center gap-1.5">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-500"></i>
+                2 Items Need Restocking
+              </span>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm divide-y divide-slate-100">
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm font-semibold text-slate-900">Basmati Rice 5kg Pack</span>
+                    <span class="text-xs font-mono text-slate-400">(SKU-9901)</span>
+                  </div>
+                  <div class="text-xs text-slate-500 mt-0.5">Threshold: 15 units • In Stock: <strong>48 units</strong></div>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 self-start sm:self-auto">Healthy</span>
+              </div>
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm font-semibold text-slate-900">Refined Sunflower Oil 1L</span>
+                    <span class="text-xs font-mono text-slate-400">(SKU-9902)</span>
+                  </div>
+                  <div class="text-xs text-slate-500 mt-0.5">Threshold: 20 units • In Stock: <strong>32 units</strong></div>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 self-start sm:self-auto">Good</span>
+              </div>
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-sm font-semibold text-slate-900">Toor Dal 1kg</span>
+                    <span class="text-xs font-mono text-slate-400">(SKU-9903)</span>
+                  </div>
+                  <div class="text-xs text-slate-500 mt-0.5">Threshold: 10 units • In Stock: <strong>4 units</strong></div>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200 self-start sm:self-auto">Low Stock</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mockup Footer -->
+          <div class="bg-white px-4 sm:px-6 py-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+            <span class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+              Interactive simulator based on BizFlow's production POS engine
+            </span>
+            <button onclick="openQuoteModal('POS Simulator Setup')" class="font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+              <span>Get this setup for your business</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== 6 CORE SERVICES ==================== -->
+  <section id="services" class="py-20 bg-slate-50/60 border-y border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Tailored Digital Solutions
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Services Built for Daily Shop Operations
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600">
+          Practical, reliable tools designed to save you hours every day, prevent stock leakage, and keep your accounting organized.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Service 1: Billing & POS -->
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="receipt" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-full">Point of Sale</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Billing & POS Software</h3>
+            <p class="text-sm text-slate-600 mt-2 mb-5">Superfast retail counter billing with barcode scanning, instant thermal receipts, and keyboard shortcuts.</p>
+            <div class="space-y-2 mb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Lightning-fast barcode scanning</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> 2-inch & 3-inch thermal printer support</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Split payment (Cash, UPI QR, Card)</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Customer ledger & outstanding balance</div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openQuoteModal('Billing & POS Software')" class="flex-1 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Get Quote</button>
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'm%20interested%20in%20Billing%20%26%20POS%20Software." target="_blank" class="p-2.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700"><i data-lucide="message-square" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 2: Inventory & Stock -->
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="boxes" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-full">Operations</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Inventory & Stock Management</h3>
+            <p class="text-sm text-slate-600 mt-2 mb-5">Never run out of high-demand items with automated low-stock warnings, batch expiry tracking, and purchase records.</p>
+            <div class="space-y-2 mb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Real-time item count & stock valuation</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Low-stock notifications & auto-reorder</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Batch number & expiry date tracking</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Barcode label generator & printing</div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openQuoteModal('Inventory & Stock Management')" class="flex-1 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Get Quote</button>
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'm%20interested%20in%20Inventory%20%26%20Stock%20Management." target="_blank" class="p-2.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700"><i data-lucide="message-square" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 3: GST Invoicing -->
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="calculator" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-full">Finance & Tax</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">GST Invoicing & Expense Tracking</h3>
+            <p class="text-sm text-slate-600 mt-2 mb-5">Generate government-compliant B2B & B2C GST tax invoices and track daily business expenses effortlessly.</p>
+            <div class="space-y-2 mb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Instant GST tax invoice generation</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> GSTR-1 & GSTR-3B friendly reports</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Daily profit, sales, and expense tracker</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> WhatsApp PDF invoice sharing</div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openQuoteModal('GST Invoicing & Expense Tracking')" class="flex-1 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Get Quote</button>
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'm%20interested%20in%20GST%20Invoicing." target="_blank" class="p-2.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700"><i data-lucide="message-square" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 4: Mobile & Meat Shop POS -->
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-full">Specialized Systems</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Mobile Shop & Meat Shop Billing</h3>
+            <p class="text-sm text-slate-600 mt-2 mb-5">Custom-configured retail POS systems designed specifically for mobile stores and fresh meat/poultry outlets.</p>
+            <div class="space-y-2 mb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Mobile: IMEI scanning & warranty receipts</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Mobile: Repair service jobcard tracker</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Meat: Electronic weighing scale sync</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Meat: Auto price-by-weight calculation</div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openQuoteModal('Mobile & Meat Shop Billing')" class="flex-1 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Get Quote</button>
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'm%20interested%20in%20Mobile%20%26%20Meat%20Shop%20Billing." target="_blank" class="p-2.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700"><i data-lucide="message-square" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 5: Business Websites & E-Commerce -->
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-full">Digital Presence</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Business Websites & E-Commerce</h3>
+            <p class="text-sm text-slate-600 mt-2 mb-5">Modern, high-converting websites and digital product catalogs equipped with direct WhatsApp ordering.</p>
+            <div class="space-y-2 mb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Fast, responsive mobile-first design</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Product catalog with WhatsApp checkout</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Google Maps & Local SEO setup</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Zero monthly hosting maintenance fees</div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openQuoteModal('Business Websites & E-Commerce')" class="flex-1 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Get Quote</button>
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'm%20interested%20in%20Business%20Websites." target="_blank" class="p-2.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700"><i data-lucide="message-square" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 6: Custom Software -->
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+              </div>
+              <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-full">Custom Solutions</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Custom Software Solutions</h3>
+            <p class="text-sm text-slate-600 mt-2 mb-5">Purpose-built desktop and web software tailored to solve your unique operational bottlenecks and workflows.</p>
+            <div class="space-y-2 mb-6 pt-2 border-t border-slate-100 text-xs sm:text-sm text-slate-700">
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Tailor-made workflow & order tracking</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Internal staff portals & role permissions</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Custom Excel/PDF export automation</div>
+              <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-600"></i> Lifetime local maintenance & support</div>
+            </div>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openQuoteModal('Custom Software Solutions')" class="flex-1 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Get Quote</button>
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'm%20interested%20in%20Custom%20Software." target="_blank" class="p-2.5 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700"><i data-lucide="message-square" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== DEMO PROJECTS ==================== -->
+  <section id="demos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Real Systems In Action
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Explore Our Specialized Systems
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600">
+          Tailored retail and business engines engineered for high speeds, simple workflows, and specific trade requirements.
+        </p>
+      </div>
+
+      <!-- Demo Selector Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <button onclick="switchDemoProject('retail')" id="demo-tab-retail" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 text-white transition-all">FlowRetail POS</button>
+        <button onclick="switchDemoProject('mobile')" id="demo-tab-mobile" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 transition-all">TechFlow Mobile POS</button>
+        <button onclick="switchDemoProject('meat')" id="demo-tab-meat" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 transition-all">MeatFlow Fresh POS</button>
+        <button onclick="switchDemoProject('gst')" id="demo-tab-gst" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 transition-all">BizGST Invoicing</button>
+        <button onclick="switchDemoProject('web')" id="demo-tab-web" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 transition-all">QuickShop Web</button>
+      </div>
+
+      <!-- Demo Project Content Box -->
+      <div class="bg-slate-50/70 rounded-2xl border border-slate-200 p-6 sm:p-8 lg:p-10 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span id="demo-badge" class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 px-2.5 py-0.5 rounded-md">Live Retail System</span>
+                <span id="demo-industry" class="text-xs text-slate-500 font-medium">Supermarket & Retail Groceries</span>
+              </div>
+              <h3 id="demo-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900">FlowRetail POS</h3>
+              <p id="demo-desc" class="text-base text-slate-600 mt-1">High-speed counter checkout with instant barcode lookup and split payments.</p>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Built-in Capabilities:</span>
+              <div id="demo-highlights" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200/90 space-y-1">
+              <div class="flex items-center gap-2 text-xs font-bold text-slate-800">
+                <i data-lucide="cpu" class="w-4 h-4 text-blue-600"></i>
+                <span>Hardware Compatibility:</span>
+              </div>
+              <p id="demo-hardware" class="text-xs text-slate-600 pl-6">Compatible with standard USB/Bluetooth Thermal Printers, Barcode Guns, and Cash Drawers.</p>
+            </div>
+
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <button onclick="openQuoteModal(document.getElementById('demo-title').innerText)" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-xl shadow-sm flex items-center gap-2">
+                <span>Request Setup Quote</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <a id="demo-whatsapp-btn" href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'd%20like%20a%20demo%20of%20FlowRetail%20POS." target="_blank" class="px-4 py-3 bg-white text-slate-700 font-semibold text-sm rounded-xl border border-slate-200 shadow-2xs flex items-center gap-2">
+                <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
+                <span>Book Demo on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sample Bill Preview Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-white rounded-xl border border-slate-200 shadow-md p-5 font-mono text-xs text-slate-700">
+              <div class="text-center pb-3 border-b-2 border-dashed border-slate-300">
+                <h4 class="font-bold text-sm text-slate-900 tracking-wider">SAMPLE BILL OUTPUT</h4>
+                <p id="bill-header" class="text-[11px] text-slate-500">FlowRetail POS • Live Output</p>
+                <p id="bill-inv" class="text-[10px] text-slate-400 mt-1">Inv: INV-2026-0842</p>
+                <p id="bill-cust" class="text-[10px] text-slate-500">Customer: Walk-in Retail Customer</p>
+              </div>
+
+              <div id="bill-items" class="py-3 space-y-2 border-b-2 border-dashed border-slate-300">
+                <!-- Dynamically populated -->
+              </div>
+
+              <div class="py-2.5 space-y-1 text-[11px] border-b-2 border-dashed border-slate-300 text-slate-600">
+                <div class="flex justify-between">
+                  <span>Subtotal:</span>
+                  <span id="bill-subtotal">₹1000.00</span>
+                </div>
+                <div class="flex justify-between text-emerald-600">
+                  <span>Discount:</span>
+                  <span id="bill-discount">-₹50.00</span>
+                </div>
+                <div class="flex justify-between text-slate-500">
+                  <span>GST:</span>
+                  <span id="bill-tax">+₹47.50</span>
+                </div>
+                <div class="flex justify-between pt-1 font-bold text-xs text-slate-900 font-sans border-t border-slate-200">
+                  <span>GRAND TOTAL:</span>
+                  <span id="bill-grand" class="text-blue-600 font-mono text-sm">₹997.50</span>
+                </div>
+              </div>
+
+              <div class="pt-3 text-center space-y-1">
+                <span id="bill-payment" class="inline-block px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-700 rounded border border-emerald-200">PAID VIA: UPI Scan & Pay</span>
+                <p class="text-[10px] text-slate-400">*** Thank You! Visit Again ***</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section id="why-us" class="py-20 bg-slate-50/70 border-y border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Practical Business Value
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Why Small Businesses Choose BizFlow
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600">
+          Engineered from the ground up to eliminate expensive enterprise bloat and give shop owners fast, stress-free daily billing.
+        </p>
+      </div>
+
+      <!-- 6 Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="wallet" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Affordable & Fair Pricing</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">No recurring per-user fees or monthly traps. Transparent, small-business-friendly packages designed for local budgets.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="sparkles" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Learned in 15 Minutes</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Zero steep learning curve. Clean, uncluttered UI designed so that any new assistant or cashier can bill confidently on day one.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="wifi-off" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Works 100% Offline</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Billing never freezes when the internet disconnects. Continue barcode scanning, computing totals, and printing slips uninterrupted.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="laptop" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Use Existing Hardware</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">No expensive proprietary machines required. Runs reliably on standard Windows laptops, desktops, and standard USB receipt printers.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="zap" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Fast 24-48 Hour Setup</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">We assist you in importing your initial price catalog, setting up printer drivers, and training your counter staff.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5"><i data-lucide="headphones" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Direct Phone & WhatsApp Support</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Speak directly to a real technician over WhatsApp or phone call—never stuck waiting in an automated ticketing queue.</p>
+        </div>
+      </div>
+
+      <!-- Transparent Comparison Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden max-w-4xl mx-auto">
+        <div class="px-6 py-4 bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <h3 class="text-base font-bold">BizFlow Solutions vs Other Software</h3>
+            <p class="text-xs text-slate-400">Clear facts designed to save your time and money</p>
+          </div>
+          <button onclick="openQuoteModal('Comparison Table')" class="text-xs font-semibold px-3 py-1.5 bg-blue-600 hover:bg-blue-500 rounded-lg text-white">Get Custom Quote</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200 text-xs">
+              <tr>
+                <th class="py-3 px-6">Feature</th>
+                <th class="py-3 px-6 text-blue-600 font-bold bg-blue-50/40">BizFlow Solutions</th>
+                <th class="py-3 px-6 text-slate-500">Other Software</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              <tr>
+                <td class="py-3 px-6 font-semibold">Pricing Model</td>
+                <td class="py-3 px-6 bg-blue-50/20 text-emerald-700 font-medium">✓ Affordable, one-time or low yearly support</td>
+                <td class="py-3 px-6 text-slate-500">✗ Expensive monthly per-user subscriptions</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-6 font-semibold">Offline Billing</td>
+                <td class="py-3 px-6 bg-blue-50/20 text-emerald-700 font-medium">✓ 100% functional without internet</td>
+                <td class="py-3 px-6 text-slate-500">✗ Freezes during internet drops</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-6 font-semibold">Hardware</td>
+                <td class="py-3 px-6 bg-blue-50/20 text-emerald-700 font-medium">✓ Runs on your existing PC & USB printer</td>
+                <td class="py-3 px-6 text-slate-500">✗ Forces proprietary machine lock-in</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-6 font-semibold">Staff Training</td>
+                <td class="py-3 px-6 bg-blue-50/20 text-emerald-700 font-medium">✓ 15-minute quick cashier learning</td>
+                <td class="py-3 px-6 text-slate-500">✗ Clunky menus requiring days of training</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-6 font-semibold">Support Desk</td>
+                <td class="py-3 px-6 bg-blue-50/20 text-emerald-700 font-medium">✓ Direct WhatsApp and fast phone call</td>
+                <td class="py-3 px-6 text-slate-500">✗ Automated chatbots and delayed tickets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Our Story & Mission</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Empowering Small Businesses with Software That Just Works.</h2>
+          </div>
+          <p class="text-base text-slate-600 leading-relaxed">
+            At <strong class="text-slate-900">BizFlow Solutions</strong>, we believe every local retailer, grocery store, mobile shop, and meat shop deserves the same speed and operational efficiency as mega-supermarkets—without paying thousands of rupees in bloated enterprise subscription fees.
+          </p>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Most software in the market is either too complex, clunky, or charges recurring monthly fees that eat into small shop margins. We build lightweight, keyboard-friendly, offline-ready software and custom web solutions designed specifically for real-world shop counters.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center"><i data-lucide="target" class="w-4 h-4"></i></div>
+              <h3 class="font-bold text-slate-900 text-sm">Simplicity First</h3>
+              <p class="text-xs text-slate-600">Clean screens and minimal steps. If an assistant can't learn it in 15 minutes, we refine it.</p>
+            </div>
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
+              <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center"><i data-lucide="heart-handshake" class="w-4 h-4"></i></div>
+              <h3 class="font-bold text-slate-900 text-sm">Transparent & Fair</h3>
+              <p class="text-xs text-slate-600">Honest pricing with zero hidden fees. We help small businesses preserve their working capital.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Standards Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-5">
+            <div>
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Our Engineering Standards</span>
+              <h3 class="text-xl font-bold mt-1">Built for Counter Reliability</h3>
+            </div>
+            <div class="space-y-4 divide-y divide-slate-800">
+              <div class="pt-3 first:pt-0">
+                <div class="text-2xl sm:text-3xl font-extrabold text-blue-400">&lt; 2 Seconds</div>
+                <p class="text-xs text-slate-300 mt-1">Average time to scan, calculate tax, and print a customer receipt.</p>
+              </div>
+              <div class="pt-3">
+                <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">100% Offline</div>
+                <p class="text-xs text-slate-300 mt-1">Full point-of-sale functionality even during broadband or electricity disruption.</p>
+              </div>
+              <div class="pt-3">
+                <div class="text-2xl sm:text-3xl font-extrabold text-white">50+ Hardware Models</div>
+                <p class="text-xs text-slate-300 mt-1">Compatible with TVS, Epson, NGX, Posiflex, USB scanners, and weighing scales.</p>
+              </div>
+              <div class="pt-3">
+                <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">24-48 Hours</div>
+                <p class="text-xs text-slate-300 mt-1">Standard turnaround to configure your system, import item catalogs, and go live.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== QUOTE CALCULATOR & WHATSAPP ==================== -->
+  <section id="quote" class="py-20 bg-slate-50/70 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Instant Quote Calculator
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Get an Accurate Quote for Your Shop
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600">
+          Select your business type and needed features. Send directly on WhatsApp for an immediate response or submit online.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden p-6 sm:p-10">
+        <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-8">
+          
+          <!-- Step 1: Business Type -->
+          <div class="space-y-3">
+            <label class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">1</span>
+              <span>What type of business do you run?</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <label class="p-3.5 rounded-xl border border-blue-600 bg-blue-50 text-blue-900 font-semibold text-xs sm:text-sm cursor-pointer flex items-center gap-2">
+                <input type="radio" name="biz_type" value="Supermarket / Grocery / Retail" checked class="accent-blue-600">
+                <span>Supermarket / Grocery / Retail</span>
+              </label>
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm cursor-pointer flex items-center gap-2">
+                <input type="radio" name="biz_type" value="Mobile & Electronics Store" class="accent-blue-600">
+                <span>Mobile & Electronics Store</span>
+              </label>
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm cursor-pointer flex items-center gap-2">
+                <input type="radio" name="biz_type" value="Meat, Poultry & Seafood" class="accent-blue-600">
+                <span>Meat, Poultry & Seafood</span>
+              </label>
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm cursor-pointer flex items-center gap-2">
+                <input type="radio" name="biz_type" value="Wholesale & Distribution" class="accent-blue-600">
+                <span>Wholesale & Distribution</span>
+              </label>
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm cursor-pointer flex items-center gap-2">
+                <input type="radio" name="biz_type" value="Bakery / Restaurant / Cafe" class="accent-blue-600">
+                <span>Bakery / Restaurant / Cafe</span>
+              </label>
+              <label class="p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm cursor-pointer flex items-center gap-2">
+                <input type="radio" name="biz_type" value="Other Shop / Custom Enterprise" class="accent-blue-600">
+                <span>Other Shop / Enterprise</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Modules -->
+          <div class="space-y-3">
+            <label class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">2</span>
+              <span>Which software capabilities do you need?</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+              <label class="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 flex items-center gap-2.5 cursor-pointer">
+                <input type="checkbox" name="module" value="Fast POS Counter Billing" checked class="w-4 h-4 accent-blue-600">
+                <span>Fast POS Counter Billing</span>
+              </label>
+              <label class="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 flex items-center gap-2.5 cursor-pointer">
+                <input type="checkbox" name="module" value="Real-time Inventory & Stock" checked class="w-4 h-4 accent-blue-600">
+                <span>Real-time Inventory & Stock Tracking</span>
+              </label>
+              <label class="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 flex items-center gap-2.5 cursor-pointer">
+                <input type="checkbox" name="module" value="GST Tax Invoicing & GSTR Reports" checked class="w-4 h-4 accent-blue-600">
+                <span>GST Tax Invoicing & GSTR Reports</span>
+              </label>
+              <label class="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 flex items-center gap-2.5 cursor-pointer">
+                <input type="checkbox" name="module" value="Digital Weighing Scale Integration" class="w-4 h-4 accent-blue-600">
+                <span>Digital Weighing Scale Integration (Meat/Poultry)</span>
+              </label>
+              <label class="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 flex items-center gap-2.5 cursor-pointer">
+                <input type="checkbox" name="module" value="IMEI & Serial Number Warranty" class="w-4 h-4 accent-blue-600">
+                <span>IMEI & Serial Number Tracking (Mobile Shop)</span>
+              </label>
+              <label class="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 flex items-center gap-2.5 cursor-pointer">
+                <input type="checkbox" name="module" value="Business Website & WhatsApp Store" class="w-4 h-4 accent-blue-600">
+                <span>Business Website & WhatsApp Store</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact Info -->
+          <div class="space-y-3 pt-2">
+            <label class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center font-bold">3</span>
+              <span>Where should we send your quote?</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-semibold text-slate-600 block mb-1">Your Name</label>
+                <input type="text" id="quote-name" placeholder="e.g. Ramesh Kumar" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-slate-600 block mb-1">WhatsApp / Phone Number *</label>
+                <input type="tel" id="quote-phone" required placeholder="e.g. +91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-slate-600 block mb-1">Shop / Business Name</label>
+                <input type="text" id="quote-business" placeholder="e.g. Sri Krishna Supermarket" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-slate-600 block mb-1">City / Town</label>
+                <input type="text" id="quote-city" placeholder="e.g. Chennai / Bangalore / Coimbatore" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Buttons -->
+          <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center gap-3">
+            <button type="button" onclick="sendQuoteWhatsApp()" class="w-full sm:flex-1 py-3.5 px-5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2 transition-all">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+              <span>Send Request on WhatsApp (Instant Reply)</span>
+            </button>
+            <button type="submit" class="w-full sm:w-auto py-3.5 px-6 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl transition-all">
+              Submit Online
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT & FAQS ==================== -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Get In Touch</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Let’s Simplify Your Shop Operations</h2>
+        <p class="text-sm sm:text-base text-slate-600">Have questions or want to see a live demo on your screen? Reach out directly via WhatsApp, phone, or our form below.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Contact Cards (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200/90 space-y-4">
+            <h3 class="text-lg font-bold text-slate-900">Direct Contact Information</h3>
+            
+            <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'd%20like%20to%20connect." target="_blank" class="flex items-start gap-3.5 p-3 rounded-xl bg-white border border-slate-200 hover:border-emerald-400 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0"><i data-lucide="message-square" class="w-5 h-5"></i></div>
+              <div>
+                <span class="text-xs font-medium text-slate-500 block">WhatsApp Support</span>
+                <span class="text-sm font-bold text-slate-900">+91 98765 43210</span>
+                <p class="text-[11px] text-emerald-600 font-medium">Fastest response (under 15 mins)</p>
+              </div>
+            </a>
+
+            <a href="tel:+919876543210" class="flex items-start gap-3.5 p-3 rounded-xl bg-white border border-slate-200 hover:border-blue-400 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-5 h-5"></i></div>
+              <div>
+                <span class="text-xs font-medium text-slate-500 block">Direct Phone</span>
+                <span class="text-sm font-bold text-slate-900">+91 98765 43210</span>
+                <p class="text-[11px] text-slate-500">Mon - Sat: 9:00 AM – 8:00 PM</p>
+              </div>
+            </a>
+
+            <a href="mailto:bizflowsolutions@gmail.com" class="flex items-start gap-3.5 p-3 rounded-xl bg-white border border-slate-200 hover:border-slate-400 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-5 h-5"></i></div>
+              <div>
+                <span class="text-xs font-medium text-slate-500 block">Official Email</span>
+                <span class="text-sm font-bold text-slate-900">bizflowsolutions@gmail.com</span>
+                <p class="text-[11px] text-slate-500">For quotations & partnerships</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="p-4 rounded-xl border border-blue-100 bg-blue-50/50 flex items-start gap-3 text-xs text-blue-900">
+            <i data-lucide="shield-check" class="w-5 h-5 text-blue-600 flex-shrink-0"></i>
+            <span>We provide free 1-on-1 walkthroughs of the billing software before you make any payment.</span>
+          </div>
+        </div>
+
+        <!-- Contact Form & FAQs (7 cols) -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-1">Send a Message</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mb-6">Fill this quick form and we'll reply with a custom proposal.</p>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-xs font-semibold text-slate-700 block mb-1">Your Name</label>
+                  <input type="text" id="contact-name" placeholder="Ravi Kumar" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
+                </div>
+                <div>
+                  <label class="text-xs font-semibold text-slate-700 block mb-1">WhatsApp / Phone *</label>
+                  <input type="tel" id="contact-phone" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
+                </div>
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-slate-700 block mb-1">How can we help your business?</label>
+                <textarea id="contact-msg" rows="3" placeholder="e.g. We have a small grocery store and need billing software with barcode scanner and GST receipts." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"></textarea>
+              </div>
+              <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <button type="button" onclick="sendContactWhatsApp()" class="flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow-sm flex items-center justify-center gap-2">
+                  <i data-lucide="message-square" class="w-4 h-4"></i>
+                  <span>Send via WhatsApp</span>
+                </button>
+                <button type="submit" class="py-3 px-6 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl">
+                  Submit Online
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- FAQs -->
+          <div class="space-y-3">
+            <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-5 h-5 text-blue-600"></i>
+              <span>Frequently Asked Questions</span>
+            </h3>
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-1">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900">Can I use my existing computer and printer?</h4>
+              <p class="text-xs text-slate-600">Yes! BizFlow software runs on almost any standard Windows laptop or desktop (Windows 7/8/10/11) and works seamlessly with USB and Bluetooth thermal printers.</p>
+            </div>
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-1">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900">What happens if our shop internet goes down?</h4>
+              <p class="text-xs text-slate-600">Our POS and billing software works 100% offline. You can continue scanning items, accepting cash/UPI payments, and printing bills uninterrupted.</p>
+            </div>
+            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-1">
+              <h4 class="text-xs sm:text-sm font-bold text-slate-900">Do you help us add all our shop items and prices?</h4>
+              <p class="text-xs text-slate-600">Yes. If you have an Excel sheet or handwritten list of your items, we help upload them so your counter is ready to bill on day one.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white"><i data-lucide="layers" class="w-5 h-5"></i></div>
+            <span class="text-xl font-bold tracking-tight text-white">BizFlow <span class="text-blue-400">Solutions</span></span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
+            Providing affordable, simple, and reliable software solutions for small retailers, local shops, and growing businesses across India.
+          </p>
+          <div class="pt-1">
+            <a href="https://wa.me/919876543210" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-800 hover:bg-emerald-950/40 text-emerald-400 border border-slate-700 text-xs font-semibold">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+              <span>WhatsApp: +91 98765 43210</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Services</h4>
+          <ul class="space-y-2 text-xs sm:text-sm">
+            <li><a href="#services" class="hover:text-blue-400">Billing & POS Systems</a></li>
+            <li><a href="#services" class="hover:text-blue-400">Inventory Management</a></li>
+            <li><a href="#services" class="hover:text-blue-400">GST Tax Invoicing</a></li>
+            <li><a href="#services" class="hover:text-blue-400">Mobile & Meat POS</a></li>
+            <li><a href="#services" class="hover:text-blue-400">Business Websites</a></li>
+            <li><a href="#services" class="hover:text-blue-400">Custom Software</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-xs sm:text-sm">
+            <li><a href="#demos" class="hover:text-blue-400">Demo Systems</a></li>
+            <li><a href="#why-us" class="hover:text-blue-400">Why Choose Us</a></li>
+            <li><a href="#about" class="hover:text-blue-400">About Our Mission</a></li>
+            <li><a href="#quote" class="hover:text-blue-400">Instant Quote</a></li>
+            <li><a href="#contact" class="hover:text-blue-400">Contact & Support</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Direct Desk</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-3.5 h-3.5 text-blue-400"></i> +91 98765 43210</li>
+            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5 text-blue-400"></i> bizflowsolutions@gmail.com</li>
+            <li class="pt-2">
+              <button onclick="openQuoteModal('Footer Quote')" class="w-full py-2 px-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold">
+                Request a Quote
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 BizFlow Solutions. All rights reserved. Smart Tools. Simpler Business.</p>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white">
+          <i data-lucide="arrow-up" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+  <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+    <div id="wa-tooltip" class="hidden sm:flex items-center gap-2 bg-white text-slate-800 text-xs font-semibold py-2 px-3.5 rounded-full shadow-lg border border-slate-200">
+      <span>Need a quote? Chat on WhatsApp</span>
+      <button onclick="document.getElementById('wa-tooltip').remove()" class="text-slate-400 hover:text-slate-600 p-0.5">
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+    <a href="https://wa.me/919876543210?text=Hi%20BizFlow%20Solutions,%20I'd%20like%20to%20inquire%20about%20your%20software." target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all relative">
+      <i data-lucide="message-square" class="w-7 h-7"></i>
+      <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
+    </a>
+  </div>
+
+
+  <!-- ==================== GLOBAL QUOTE POPUP MODAL ==================== -->
+  <div id="quote-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-lg w-full overflow-hidden" onclick="event.stopPropagation()">
+      <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900">Request a Free Quote</h3>
+          <p class="text-xs text-slate-500">Transparent pricing • No hidden commitments</p>
+        </div>
+        <button onclick="closeQuoteModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200/60">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6">
+        <form onsubmit="handleModalQuote(event)" class="space-y-4">
+          <div>
+            <label class="text-xs font-semibold text-slate-700 block mb-1">Select Service</label>
+            <select id="modal-service" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm font-medium text-slate-800">
+              <option value="Billing & POS Software">Billing & POS Software</option>
+              <option value="Inventory & Stock Management">Inventory & Stock Management</option>
+              <option value="GST Invoicing & Expense Tracking">GST Invoicing & Expense Tracking</option>
+              <option value="Mobile Shop & Meat Shop Systems">Mobile Shop & Meat Shop Systems</option>
+              <option value="Business Websites & E-Commerce">Business Websites & E-Commerce</option>
+              <option value="Custom Software Solutions">Custom Software Solutions</option>
+              <option value="Complete All-in-One Package">Complete All-in-One Package</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-semibold text-slate-700 block mb-1">Your Name</label>
+              <input type="text" id="modal-name" placeholder="Anand Kumar" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm">
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-700 block mb-1">WhatsApp / Phone *</label>
+              <input type="tel" id="modal-phone" required placeholder="98765 43210" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-semibold text-slate-700 block mb-1">Shop / Business Name</label>
+              <input type="text" id="modal-biz" placeholder="Supreme Mart" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm">
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-700 block mb-1">Town / City</label>
+              <input type="text" id="modal-city" placeholder="Madurai" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm">
+            </div>
+          </div>
+          <div class="pt-3 flex flex-col sm:flex-row gap-2.5">
+            <button type="submit" class="flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow-sm flex items-center justify-center gap-2">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+              <span>Send on WhatsApp</span>
+            </button>
+            <button type="button" onclick="alert('Thank you! Your quote inquiry has been submitted. We will contact you shortly.'); closeQuoteModal();" class="py-3 px-4 bg-slate-900 text-white font-semibold text-sm rounded-xl">
+              Submit Online
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== VANILLA JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu').classList.add('hidden');
+    }
+
+    // Modal logic
+    function openQuoteModal(serviceName = '') {
+      if (serviceName) {
+        const select = document.getElementById('modal-service');
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toLowerCase().includes(serviceName.toLowerCase()) || serviceName.toLowerCase().includes(select.options[i].value.toLowerCase())) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      document.getElementById('quote-modal').classList.remove('hidden');
+    }
+    function closeQuoteModal() {
+      document.getElementById('quote-modal').classList.add('hidden');
+    }
+    document.getElementById('quote-modal').addEventListener('click', closeQuoteModal);
+
+    // ==================== POS SIMULATOR LOGIC ====================
+    let cart = [
+      { id: 1, name: "Premium Sona Masoori Rice (5kg)", price: 340, qty: 1, taxRate: 0.05 },
+      { id: 2, name: "Pure Cow Ghee (500ml)", price: 390, qty: 1, taxRate: 0.12 },
+      { id: 3, name: "Refined Sunflower Oil (1L)", price: 155, qty: 2, taxRate: 0.05 }
+    ];
+
+    function renderCart() {
+      const container = document.getElementById('pos-items-container');
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">Cart is empty. Click any quick-add item below.</div>';
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="px-4 py-2.5 grid grid-cols-12 items-center hover:bg-slate-50/70">
+            <div class="col-span-6 pr-2">
+              <p class="text-xs sm:text-sm font-semibold text-slate-800 truncate">${item.name}</p>
+              <span class="text-[10px] text-blue-600 bg-blue-50 px-1 rounded font-medium">₹${item.price} + ${(item.taxRate*100)}% GST</span>
+            </div>
+            <div class="col-span-3 flex items-center justify-center gap-1.5">
+              <button onclick="changeQty(${item.id}, -1)" class="w-5 h-5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">-</button>
+              <span class="text-xs font-bold text-slate-900 w-4 text-center">${item.qty}</span>
+              <button onclick="changeQty(${item.id}, 1)" class="w-5 h-5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center">+</button>
+            </div>
+            <div class="col-span-3 flex items-center justify-end gap-2 text-right">
+              <span class="text-xs sm:text-sm font-bold text-slate-900">₹${(item.price * item.qty).toFixed(2)}</span>
+              <button onclick="removePosItem(${item.id})" class="text-slate-300 hover:text-rose-500 text-xs">✕</button>
+            </div>
+          </div>
+        `).join('');
+      }
+      calculateBill();
+      lucide.createIcons();
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+        renderCart();
+      }
+    }
+
+    function removePosItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      renderCart();
+    }
+
+    function addQuickItem(name, price, taxRate) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id: Date.now(), name, price, qty: 1, taxRate });
+      }
+      renderCart();
+    }
+
+    function calculateBill() {
+      const discountPercent = Number(document.getElementById('pos-discount-select').value);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const discount = (subtotal * discountPercent) / 100;
+      const taxable = subtotal - discount;
+      const tax = cart.reduce((sum, item) => {
+        const itemSubtotal = item.price * item.qty;
+        const itemDiscounted = itemSubtotal * (1 - discountPercent / 100);
+        return sum + (itemDiscounted * item.taxRate);
+      }, 0);
+      const grandTotal = Math.round(taxable + tax);
+
+      document.getElementById('pos-subtotal').innerText = '₹' + subtotal.toFixed(2);
+      document.getElementById('pos-discount').innerText = '-₹' + discount.toFixed(2);
+      document.getElementById('pos-tax').innerText = '+₹' + tax.toFixed(2);
+      document.getElementById('pos-grand-total').innerText = '₹' + grandTotal.toLocaleString('en-IN');
+    }
+
+    function selectPaymentMode(mode) {
+      ['upi', 'cash', 'card'].forEach(m => {
+        const btn = document.getElementById('pay-btn-' + m);
+        if (m === mode) {
+          btn.className = "p-2 rounded-lg border border-blue-600 bg-blue-50 text-blue-700 font-semibold text-xs flex flex-col items-center justify-center";
+        } else {
+          btn.className = "p-2 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs flex flex-col items-center justify-center";
+        }
+      });
+    }
+
+    function simulatePrintReceipt() {
+      const alertBox = document.getElementById('print-alert');
+      alertBox.classList.remove('hidden');
+      setTimeout(() => alertBox.classList.add('hidden'), 4000);
+    }
+
+    function switchPreviewTab(tab) {
+      ['pos', 'sales', 'inventory'].forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        const content = document.getElementById('tab-content-' + t);
+        if (t === tab) {
+          btn.className = "px-3 py-1.5 rounded-md text-xs font-medium bg-blue-600 text-white flex items-center gap-1.5";
+          content.classList.remove('hidden');
+        } else {
+          btn.className = "px-3 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5";
+          content.classList.add('hidden');
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // ==================== DEMO PROJECTS SWITCHER ====================
+    const demoData = {
+      retail: {
+        badge: "Live Retail System",
+        industry: "Supermarket & Retail Groceries",
+        title: "FlowRetail POS",
+        desc: "High-speed counter checkout with instant barcode lookup and split payments.",
+        hardware: "Compatible with any USB/Bluetooth Thermal Printer, Barcode Gun, and Cash Drawer.",
+        highlights: [
+          "Sub-second barcode scan & keyboard-only billing",
+          "Instant 2-inch and 3-inch thermal slip generation",
+          "UPI Dynamic QR code generation for instant customer payment",
+          "Customer credit ledger (Khata) with SMS/WhatsApp receipts"
+        ],
+        sampleBill: {
+          inv: "INV-2026-0842",
+          customer: "Walk-in Retail Customer",
+          subtotal: 1000.00,
+          discount: 50.00,
+          tax: 47.50,
+          grand: 997.50,
+          payment: "UPI Scan & Pay",
+          items: [
+            { name: "Premium Basmati Rice 5kg", qty: 1, rate: 420, amount: 420 },
+            { name: "Sunflower Cooking Oil 1L", qty: 2, rate: 165, amount: 330 },
+            { name: "Organic Toor Dal 1kg", qty: 1, rate: 145, amount: 145 },
+            { name: "Assorted Biscuits Pack", qty: 3, rate: 35, amount: 105 }
+          ]
+        }
+      },
+      mobile: {
+        badge: "Electronics & Gadgets",
+        industry: "Mobile Phone & Electronics Retailers",
+        title: "TechFlow Mobile POS",
+        desc: "Built-in IMEI scanning, serial tracking, warranty printouts, and service jobcards.",
+        hardware: "Standard PC / Laptop, 80mm Thermal or A4 LaserJet Printer, 2D Barcode Scanner.",
+        highlights: [
+          "Dual-IMEI number entry with camera/gun scanner input",
+          "Printed warranty card with customer phone validation",
+          "Mobile accessories stock with fast SKU generator",
+          "Repair service tracker with customer status SMS updates"
+        ],
+        sampleBill: {
+          inv: "TECH-2026-0319",
+          customer: "Suresh Kumar (+91 94451 ****)",
+          subtotal: 15897.00,
+          discount: 397.00,
+          tax: 2790.00,
+          grand: 18290.00,
+          payment: "Credit Card / EMI",
+          items: [
+            { name: "5G Smartphone 128GB (IMEI: 8645210499214)", qty: 1, rate: 14999, amount: 14999 },
+            { name: "Tempered Glass Screen Protector", qty: 1, rate: 199, amount: 199 },
+            { name: "Fast Charge 33W USB-C Adapter", qty: 1, rate: 699, amount: 699 }
+          ]
+        }
+      },
+      meat: {
+        badge: "Scale Integrated",
+        industry: "Butcheries, Poultry & Seafood Outlets",
+        title: "MeatFlow Fresh POS",
+        desc: "Live electronic weighing scale sync, instant price-by-weight billing, and daily waste tracking.",
+        hardware: "Electronic Weighing Scale (Essae, Phoenix, Contech), Touch Monitor / Laptop, Thermal Printer.",
+        highlights: [
+          "Direct USB/Serial port sync with digital weighing machines",
+          "Real-time weight reading (e.g., 1.450 kg auto-computes price)",
+          "Touchscreen-optimized large buttons for wet/busy hands",
+          "Morning live chicken inward vs evening dressed meat yield"
+        ],
+        sampleBill: {
+          inv: "MEAT-2026-1102",
+          customer: "Express Counter #1",
+          subtotal: 1180.50,
+          discount: 0.00,
+          tax: 0.00,
+          grand: 1180.50,
+          payment: "Cash",
+          items: [
+            { name: "Fresh Skinless Chicken (1.650 kg @ ₹220/kg)", qty: 1, rate: 363, amount: 363 },
+            { name: "Farm Fresh Country Eggs (Tray of 30)", qty: 1, rate: 180, amount: 180 },
+            { name: "Boneless Mutton (0.750 kg @ ₹850/kg)", qty: 1, rate: 637.50, amount: 637.50 }
+          ]
+        }
+      },
+      gst: {
+        badge: "GST & Tax Filing",
+        industry: "B2B Wholesalers & Distributors",
+        title: "BizGST Invoicing & Ledger",
+        desc: "Govt-compliant GST tax invoices with HSN lookups, customer ledgers, and one-click GSTR exports.",
+        hardware: "Standard PC, Laptop, or Tablet. Regular A4/A5 Laser or Inkjet printer.",
+        highlights: [
+          "Professional A4/A5 GST tax invoice with logo & signature",
+          "Automated SGST, CGST, and IGST calculation based on state",
+          "Customer outstanding ledger statement with WhatsApp reminder",
+          "GSTR-1 and GSTR-3B Excel ready summary for accountants"
+        ],
+        sampleBill: {
+          inv: "GST-2026-0048",
+          customer: "Sri Murugan Electricals (GSTIN: 33AAAAA)",
+          subtotal: 21500.00,
+          discount: 500.00,
+          tax: 3780.00,
+          grand: 24780.00,
+          payment: "Bank NEFT Transfer",
+          items: [
+            { name: "LED Ceiling Panel 18W (HSN 9405)", qty: 25, rate: 280, amount: 7000 },
+            { name: "Copper Wiring Bundle 90m (HSN 8544)", qty: 10, rate: 1450, amount: 14500 }
+          ]
+        }
+      },
+      web: {
+        badge: "E-Commerce",
+        industry: "Local Retailers & Boutique Brands",
+        title: "QuickShop Web & Catalog",
+        desc: "Mobile-first digital storefront where customers browse items and order straight to your WhatsApp.",
+        hardware: "100% Cloud-hosted. Customers access on any smartphone or browser.",
+        highlights: [
+          "Clean product photos, pricing, and category filters",
+          "Instant 'Order on WhatsApp' cart with automatic item summary",
+          "Fast load speed with 100/100 Google Mobile score",
+          "Integrated Google Maps location and store opening hours"
+        ],
+        sampleBill: {
+          inv: "WEB-ORD-552",
+          customer: "Online Customer via WhatsApp",
+          subtotal: 1350.00,
+          discount: 100.00,
+          tax: 62.50,
+          grand: 1312.50,
+          payment: "UPI on Delivery",
+          items: [
+            { name: "Handcrafted Ceramic Mug Set", qty: 1, rate: 650, amount: 650 },
+            { name: "Aromatherapy Candle 200g", qty: 2, rate: 350, amount: 700 }
+          ]
+        }
+      }
+    };
+
+    function switchDemoProject(key) {
+      ['retail', 'mobile', 'meat', 'gst', 'web'].forEach(k => {
+        const tab = document.getElementById('demo-tab-' + k);
+        if (k === key) {
+          tab.className = "px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 text-white transition-all";
+        } else {
+          tab.className = "px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 transition-all";
+        }
+      });
+
+      const data = demoData[key];
+      document.getElementById('demo-badge').innerText = data.badge;
+      document.getElementById('demo-industry').innerText = data.industry;
+      document.getElementById('demo-title').innerText = data.title;
+      document.getElementById('demo-desc').innerText = data.desc;
+      document.getElementById('demo-hardware').innerText = data.hardware;
+      document.getElementById('demo-whatsapp-btn').href = "https://wa.me/919876543210?text=" + encodeURIComponent("Hi BizFlow Solutions, I'd like a demo of " + data.title + ".");
+
+      document.getElementById('demo-highlights').innerHTML = data.highlights.map(h => `
+        <div class="flex items-start gap-2 text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200/70 shadow-2xs">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5"></i>
+          <span>${h}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('bill-header').innerText = data.title + " • Live Output";
+      document.getElementById('bill-inv').innerText = "Inv: " + data.sampleBill.inv;
+      document.getElementById('bill-cust').innerText = "Customer: " + data.sampleBill.customer;
+      document.getElementById('bill-subtotal').innerText = "₹" + data.sampleBill.subtotal.toFixed(2);
+      document.getElementById('bill-discount').innerText = "-₹" + data.sampleBill.discount.toFixed(2);
+      document.getElementById('bill-tax').innerText = "+₹" + data.sampleBill.tax.toFixed(2);
+      document.getElementById('bill-grand').innerText = "₹" + data.sampleBill.grand.toFixed(2);
+      document.getElementById('bill-payment').innerText = "PAID VIA: " + data.sampleBill.payment;
+
+      document.getElementById('bill-items').innerHTML = data.sampleBill.items.map(item => `
+        <div class="flex justify-between items-start">
+          <div class="pr-2">
+            <span class="font-sans font-medium text-slate-900 block leading-tight">${item.name}</span>
+            <span class="text-[10px] text-slate-400">Qty: ${item.qty} × ₹${item.rate.toFixed(2)}</span>
+          </div>
+          <span class="font-bold text-slate-900 whitespace-nowrap">₹${item.amount.toFixed(2)}</span>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // ==================== QUOTE BUILDER & WHATSAPP LOGIC ====================
+    function sendQuoteWhatsApp() {
+      const bizType = document.querySelector('input[name="biz_type"]:checked')?.value || "Retail Shop";
+      const modules = Array.from(document.querySelectorAll('input[name="module"]:checked')).map(c => c.value);
+      const name = document.getElementById('quote-name').value.trim() || "Shop Owner";
+      const phone = document.getElementById('quote-phone').value.trim() || "Not specified";
+      const business = document.getElementById('quote-business').value.trim() || "Local Shop";
+      const city = document.getElementById('quote-city').value.trim() || "India";
+
+      const message = `*NEW QUOTE REQUEST - BIZFLOW SOLUTIONS*
+----------------------------------
+*Name:* ${name}
+*Business:* ${business}
+*Location:* ${city}
+*Phone:* ${phone}
+*Business Type:* ${bizType}
+
+*Required Software Modules:*
+${modules.map(m => `• ${m}`).join('\n')}
+
+_Please share the pricing estimate, setup timeline, and demo schedule._`;
+
+      window.open('https://wa.me/919876543210?text=' + encodeURIComponent(message), '_blank');
+    }
+
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      alert("Thank you! Your quote request has been received. Our specialist will contact you on your number within 1 hour.");
+      document.getElementById('quote-form').reset();
+    }
+
+    function sendContactWhatsApp() {
+      const name = document.getElementById('contact-name').value.trim() || "Client";
+      const phone = document.getElementById('contact-phone').value.trim() || "Not specified";
+      const msg = document.getElementById('contact-msg').value.trim() || "I would like to inquire about your software.";
+
+      const text = `*NEW CONTACT MESSAGE - BIZFLOW SOLUTIONS*
+---------------------------------------
+*From:* ${name}
+*Phone:* ${phone}
+*Message:* ${msg}`;
+
+      window.open('https://wa.me/919876543210?text=' + encodeURIComponent(text), '_blank');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been sent successfully. We will get in touch with you shortly.");
+      e.target.reset();
+    }
+
+    function handleModalQuote(e) {
+      e.preventDefault();
+      const service = document.getElementById('modal-service').value;
+      const name = document.getElementById('modal-name').value.trim() || "Shop Owner";
+      const phone = document.getElementById('modal-phone').value.trim() || "Not specified";
+      const biz = document.getElementById('modal-biz').value.trim() || "Shop";
+      const city = document.getElementById('modal-city').value.trim() || "India";
+
+      const text = `*QUOTE REQUEST - BIZFLOW SOLUTIONS*
+------------------------------
+*Service:* ${service}
+*Name:* ${name}
+*Business:* ${biz}
+*Phone:* ${phone}
+*City:* ${city}
+
+_Please send the pricing quote and demo video._`;
+
+      window.open('https://wa.me/919876543210?text=' + encodeURIComponent(text), '_blank');
+      closeQuoteModal();
+    }
+
+    // Initial setup on load
+    renderCart();
+    switchDemoProject('retail');
+  </script>
+
+</body>
+</html>
