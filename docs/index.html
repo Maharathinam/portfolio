@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahalakshmi R | Business Solutions Developer & DevOps Specialist</title>
+  <title>Mahalakshmi R | Developer Portfolio</title>
   
-  <!-- SEO & Meta -->
-  <meta name="description" content="Portfolio of Mahalakshmi R - BCA Graduate, Business Solutions Developer, and DevOps Specialist. Building fast POS billing software, inventory systems, business websites, and automated cloud deployments for small businesses.">
-  <meta name="keywords" content="Mahalakshmi R, Business Solutions Developer, POS Billing Software, Inventory Management, BCA Graduate, DevOps, Docker, Small Business Software, Freelance Developer">
-  <meta name="author" content="Mahalakshmi R">
-
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <meta name="description" content="Personal portfolio of Mahalakshmi R - BCA Graduate, Full-Stack Developer & DevOps Specialist.">
+  
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,18 +18,6 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              200: '#bfdbfe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
-            }
-          },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace']
@@ -46,352 +31,161 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    .bg-subtle-grid {
-      background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
-      background-size: 28px 28px;
+    .bg-dots {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+      background-size: 24px 24px;
     }
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #f8fafc; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
   </style>
 </head>
-<body class="bg-white text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700 font-sans">
+<body class="bg-white text-slate-800 antialiased font-sans selection:bg-blue-100 selection:text-blue-700">
 
-  <!-- ==================== HEADER / NAVBAR ==================== -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
-        
-        <!-- Personal Brand -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-sm shadow-blue-500/20 group-hover:bg-blue-700 transition-colors">
-            MR
-          </div>
-          <div>
-            <div class="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
-              Mahalakshmi R
-            </div>
-            <p class="text-[11px] font-medium text-slate-500 leading-none">Business Solutions Developer • BCA & DevOps</p>
-          </div>
+  <!-- ==================== MINIMAL NAVBAR ==================== -->
+  <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-bold text-slate-900 tracking-tight text-base hover:text-blue-600 transition-colors flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">MR</span>
+        <span>Mahalakshmi R</span>
+      </a>
+
+      <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-blue-600 transition-colors hidden sm:inline">About</a>
+        <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+        <a href="https://wa.me/919876543210" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors flex items-center gap-1.5">
+          <i data-lucide="message-square" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>Chat</span>
         </a>
+      </div>
+    </div>
+  </nav>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#about" class="hover:text-blue-600 transition-colors">About Me</a>
-          <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
-          <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
-          <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
-          <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
-        </nav>
 
-        <!-- Header Actions -->
-        <div class="hidden lg:flex items-center gap-3">
-          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'm%20interested%20in%20discussing%20a%20business%20software%20project." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+  <!-- ==================== HERO SECTION (COMPACT) ==================== -->
+  <header class="py-16 sm:py-20 bg-dots border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="space-y-4 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold">
+          <span>👋 Hello World</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          I'm <span class="text-blue-600">Mahalakshmi R</span>. <br>
+          Developer & DevOps Enthusiast.
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+          <strong>BCA graduate</strong> with a passion for building lightweight full-stack web applications, offline POS software, and automated cloud deployments with Docker & Linux.
+        </p>
+
+        <!-- Action Links -->
+        <div class="pt-2 flex flex-wrap items-center gap-3">
+          <a href="#projects" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-xl shadow-sm transition-all flex items-center gap-2">
+            <span>View Projects</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+
+          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20connect%20with%20you." target="_blank" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm rounded-xl transition-colors flex items-center gap-2">
             <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
             <span>WhatsApp</span>
           </a>
 
-          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm shadow-blue-600/20 transition-all">
-            <span>Hire Me</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <a href="mailto:mahalakshmirathinam35@gmail.com" class="px-4 py-2.5 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm rounded-xl border border-slate-200 transition-colors flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
+            <span>Email</span>
+          </a>
+
+          <a href="https://github.com/Maharathinam" target="_blank" class="p-2.5 text-slate-500 hover:text-slate-900 transition-colors" title="GitHub Profile">
+            <i data-lucide="github" class="w-5 h-5"></i>
           </a>
         </div>
-
-        <!-- Mobile Menu Toggle -->
-        <div class="flex md:hidden items-center gap-2">
-          <a href="#contact" class="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 rounded-lg">
-            Hire Me
-          </a>
-          <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
-        </div>
-
       </div>
-    </div>
 
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3">
-      <div class="flex flex-col space-y-2 text-base font-medium text-slate-700">
-        <a href="#about" onclick="closeMobileMenu()" class="px-3 py-2 hover:bg-slate-50 rounded-lg">About Me</a>
-        <a href="#skills" onclick="closeMobileMenu()" class="px-3 py-2 hover:bg-slate-50 rounded-lg">Skills</a>
-        <a href="#projects" onclick="closeMobileMenu()" class="px-3 py-2 hover:bg-slate-50 rounded-lg">Projects</a>
-        <a href="#services" onclick="closeMobileMenu()" class="px-3 py-2 hover:bg-slate-50 rounded-lg">Services</a>
-        <a href="#contact" onclick="closeMobileMenu()" class="px-3 py-2 hover:bg-slate-50 rounded-lg">Contact</a>
-      </div>
-      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
-        <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg">
-          <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
-          Chat on WhatsApp
-        </a>
-      </div>
     </div>
   </header>
 
 
-  <!-- ==================== HERO SECTION (HOME) ==================== -->
-  <section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 bg-white">
-    <div class="absolute inset-0 bg-subtle-grid pointer-events-none opacity-40"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-blue-50/70 to-transparent pointer-events-none -z-10"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl mx-auto text-center space-y-6">
+  <!-- ==================== ABOUT SECTION (CONCISE) ==================== -->
+  <section id="about" class="py-14 bg-white border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="space-y-4">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600">About Me</h2>
+        <h3 class="text-2xl font-bold text-slate-900">Background & Education</h3>
         
-        <!-- Status Chip -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium shadow-2xs">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Available for Freelance Projects & Contract Roles</span>
-        </div>
-
-        <!-- Main Title -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-          Business Solutions Developer <br class="hidden sm:inline">
-          <span class="text-blue-600">& DevOps Specialist</span>
-        </h1>
-
-        <!-- Subtitle Pitch -->
-        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          I am a <strong>BCA graduate</strong> with a hands-on IT and DevOps foundation. I engineer fast <strong>POS billing systems</strong>, real-time <strong>inventory managers</strong>, <strong>business websites</strong>, and <strong>automated cloud deployments</strong> designed specifically for small businesses and retail shops.
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          I hold a <strong>Bachelor of Computer Applications (BCA)</strong> degree with a strong foundation in computer science, software development, and systems administration. I enjoy bridging application code with reliable DevOps automation—building tools that are fast, intuitive, and easy to maintain.
         </p>
 
-        <!-- CTA Action Buttons -->
-        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-          <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base rounded-xl shadow-md shadow-blue-600/20 transition-all">
-            <span>Explore My Work</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-
-          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20discuss%20a%20software%20solution%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm sm:text-base rounded-xl border border-slate-200/80 transition-all">
-            <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
-            <span>Chat on WhatsApp</span>
-          </a>
-
-          <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm sm:text-base rounded-xl border border-slate-300 transition-all">
-            <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i>
-            <span>Contact Me</span>
-          </a>
-        </div>
-
-        <!-- Key Strengths Strip -->
-        <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
-            <span class="text-xs text-slate-500 font-medium block">Education</span>
+        <!-- 3 Quick Highlight Badges -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+          <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/50">
+            <span class="text-xs text-slate-500 font-medium block">Degree</span>
             <span class="text-sm font-bold text-slate-900">BCA Graduate</span>
           </div>
-          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
-            <span class="text-xs text-slate-500 font-medium block">Architecture</span>
-            <span class="text-sm font-bold text-slate-900">Offline-First POS</span>
+          <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/50">
+            <span class="text-xs text-slate-500 font-medium block">Core Focus</span>
+            <span class="text-sm font-bold text-slate-900">Web Apps & POS Software</span>
           </div>
-          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
+          <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/50">
             <span class="text-xs text-slate-500 font-medium block">Infrastructure</span>
-            <span class="text-sm font-bold text-slate-900">Docker & Linux</span>
-          </div>
-          <div class="p-3.5 rounded-xl border border-slate-200 bg-white shadow-2xs">
-            <span class="text-xs text-slate-500 font-medium block">Turnaround</span>
-            <span class="text-sm font-bold text-slate-900">Fast 24-48h Setup</span>
+            <span class="text-sm font-bold text-slate-900">Docker, Linux & AWS</span>
           </div>
         </div>
-
       </div>
+
     </div>
   </section>
 
 
-  <!-- ==================== ABOUT ME SECTION ==================== -->
-  <section id="about" class="py-20 bg-slate-50/60 border-y border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left: Story & Philosophy (7 cols) -->
-        <div class="lg:col-span-7 space-y-6">
-          <div class="space-y-2">
-            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-              About Me
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Bridging Small Business Needs with Reliable Technology
-            </h2>
-          </div>
-
-          <p class="text-base text-slate-600 leading-relaxed">
-            I am <strong>Mahalakshmi R</strong>, a <strong>Bachelor of Computer Applications (BCA)</strong> graduate with hands-on expertise in IT operations, Linux systems, and modern web software.
-          </p>
-
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Many small retail stores, supermarkets, mobile stores, and traders are overwhelmed by expensive enterprise software that charges exorbitant monthly subscriptions and breaks whenever internet connectivity drops. My mission is to build <strong>fast, offline-capable, easy-to-use business software</strong> that runs on standard computers and printers, saving shop owners time and money.
-          </p>
-
-          <!-- Two Core Pillars -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-2">
-              <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-                <i data-lucide="code" class="w-4 h-4"></i>
-              </div>
-              <h3 class="font-bold text-slate-900 text-sm">Practical Business Logic</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Superfast keyboard-only billing, barcode lookups, GST invoices, and WhatsApp catalogues that cashiers learn in 15 minutes.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs space-y-2">
-              <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-                <i data-lucide="server" class="w-4 h-4"></i>
-              </div>
-              <h3 class="font-bold text-slate-900 text-sm">DevOps & System Reliability</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Containerized deployment with Docker, automated nightly database backups, Nginx SSL security, and zero data loss.
-              </p>
-            </div>
-          </div>
-
-          <div class="pt-2 flex items-center gap-3">
-            <a href="#contact" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-xl shadow-sm transition-colors">
-              Work With Me
-            </a>
-            <a href="https://github.com/Maharathinam" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-sm rounded-xl border border-slate-200 shadow-2xs transition-colors flex items-center gap-2">
-              <i data-lucide="github" class="w-4 h-4"></i>
-              <span>GitHub Profile</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Profile Summary Card (5 cols) -->
-        <div class="lg:col-span-5">
-          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
-            <div class="flex items-center gap-3 pb-4 border-b border-slate-100">
-              <div class="w-12 h-12 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-lg shadow-sm">
-                MR
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-slate-900">Mahalakshmi R</h3>
-                <p class="text-xs text-slate-500 font-medium">BCA Graduate • IT & DevOps Foundation</p>
-              </div>
-            </div>
-
-            <div class="space-y-3 text-xs sm:text-sm">
-              <div class="flex justify-between py-1.5 border-b border-slate-100">
-                <span class="text-slate-500 font-medium">Degree</span>
-                <span class="font-bold text-slate-800">Bachelor of Computer Applications (BCA)</span>
-              </div>
-              <div class="flex justify-between py-1.5 border-b border-slate-100">
-                <span class="text-slate-500 font-medium">Primary Focus</span>
-                <span class="font-bold text-slate-800">Business POS, Inventory & Web Apps</span>
-              </div>
-              <div class="flex justify-between py-1.5 border-b border-slate-100">
-                <span class="text-slate-500 font-medium">DevOps Stack</span>
-                <span class="font-bold text-slate-800">Docker, Linux, AWS, CI/CD, Nginx</span>
-              </div>
-              <div class="flex justify-between py-1.5 border-b border-slate-100">
-                <span class="text-slate-500 font-medium">Availability</span>
-                <span class="font-bold text-emerald-600">Freelance & Contract Projects</span>
-              </div>
-              <div class="flex justify-between py-1.5">
-                <span class="text-slate-500 font-medium">Location</span>
-                <span class="font-bold text-slate-800">Pan-India Remote & Local Setup</span>
-              </div>
-            </div>
-
-            <div class="p-3 bg-blue-50/70 border border-blue-100 rounded-xl text-xs text-blue-900 flex items-center gap-2.5">
-              <i data-lucide="shield-check" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
-              <span>Committed to clean documentation, transparent communication, and post-delivery support.</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ==================== SKILLS SECTION ==================== -->
-  <section id="skills" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ==================== SKILLS SECTION (COMPACT CHIPS) ==================== -->
+  <section id="skills" class="py-14 bg-slate-50/50 border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
       
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-          Core Competencies
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Technical & Practical Skills
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600">
-          A balanced skillset spanning business counter workflows, full-stack application development, and production DevOps infrastructure.
-        </p>
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600">Technical Skills</h2>
+        <h3 class="text-2xl font-bold text-slate-900 mt-1">Tools & Technologies</h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         
-        <!-- Skill 1: Business Software & POS -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all space-y-4">
-          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-            <i data-lucide="receipt" class="w-5 h-5"></i>
+        <!-- Frontend -->
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <div class="text-xs font-bold uppercase text-slate-400">Frontend</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-blue-50 text-blue-700">React</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">JavaScript (ES6+)</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">HTML5 / CSS3</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">Tailwind CSS</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">Responsive UI</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900">Business & POS Systems</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Real-world retail systems designed for counter speed and zero internet dependencies.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 pt-2 border-t border-slate-100">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Fast Barcode Scanning</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> 2" & 3" Thermal Printing</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Offline-First Architecture</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> GST Invoicing & Summaries</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Weighing Scale Sync</li>
-          </ul>
         </div>
 
-        <!-- Skill 2: Frontend & Web -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all space-y-4">
-          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-            <i data-lucide="layout" class="w-5 h-5"></i>
+        <!-- Backend -->
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <div class="text-xs font-bold uppercase text-slate-400">Backend & DB</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-blue-50 text-blue-700">Node.js</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">Express.js</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">REST APIs</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">SQLite (Offline)</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">PostgreSQL</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900">Frontend & Web Development</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Fast-loading, mobile-friendly interfaces, storefronts, and internal business dashboards.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 pt-2 border-t border-slate-100">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> React & Modern JSX</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> JavaScript (ES6+)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> HTML5 & Semantic CSS</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Tailwind CSS</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Mobile Storefronts</li>
-          </ul>
         </div>
 
-        <!-- Skill 3: Backend & Databases -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all space-y-4">
-          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-            <i data-lucide="database" class="w-5 h-5"></i>
+        <!-- DevOps & Systems -->
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-3">
+          <div class="text-xs font-bold uppercase text-slate-400">DevOps & Cloud</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-blue-50 text-blue-700">Docker</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">Linux (Ubuntu)</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">Git & CI/CD</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">Nginx & SSL</span>
+            <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-100 text-slate-700">AWS (EC2/S3)</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900">Backend & Databases</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Scalable APIs and resilient database engines supporting local-first and cloud sync.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 pt-2 border-t border-slate-100">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Node.js & Express</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> RESTful API Design</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> SQLite (Local-first DB)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> PostgreSQL / MySQL</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Ledger Math & Balances</li>
-          </ul>
-        </div>
-
-        <!-- Skill 4: DevOps & Cloud -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all space-y-4">
-          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-            <i data-lucide="server" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900">DevOps & Cloud Automation</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Linux server administration, containerized pipelines, and automated maintenance.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-700 pt-2 border-t border-slate-100">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Docker & Compose</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Linux (Ubuntu Server)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Nginx & SSL Setup</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Automated S3 DB Backups</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> CI/CD with Git Actions</li>
-          </ul>
         </div>
 
       </div>
@@ -400,548 +194,148 @@
   </section>
 
 
-  <!-- ==================== PROJECTS SECTION (CLEAN & MINIMAL) ==================== -->
-  <section id="projects" class="py-20 bg-slate-50/60 border-y border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ==================== PROJECTS SECTION (CLEAN & SHORT) ==================== -->
+  <section id="projects" class="py-14 bg-white border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
       
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-          Featured Work
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Completed Solutions & Projects
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600">
-          Practical business software engineered to solve daily operational bottlenecks for shops, wholesalers, and independent enterprises.
-        </p>
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600">Featured Work</h2>
+        <h3 class="text-2xl font-bold text-slate-900 mt-1">Projects</h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div class="space-y-4">
         
-        <!-- Project 1: Billing & POS -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between overflow-hidden">
-          <div>
-            <!-- Visual Card Header -->
-            <div class="bg-slate-900 text-white p-5 border-b border-slate-800">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span class="font-mono text-emerald-400 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 100% Offline Ready
-                </span>
-                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px]">Retail POS</span>
-              </div>
-              <h3 class="text-lg font-bold text-white">Billing & POS Software for Small Shops</h3>
-              <p class="text-xs text-slate-300 mt-1">Supermarket & retail store checkout counter</p>
+        <!-- Project 1 -->
+        <div class="p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all bg-white shadow-2xs flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div class="space-y-2 max-w-xl">
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-slate-900 text-base">Billing & POS Counter Software</h4>
+              <span class="text-[10px] font-mono bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded font-semibold">Offline-First</span>
             </div>
-
-            <div class="p-6 space-y-4">
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Lightweight point-of-sale software that works without internet. Supports instant barcode scanning, keyboard-only speed billing, automated GST tax calculation, split payments (Cash & UPI QR), and thermal receipt printing.
-              </p>
-
-              <div class="space-y-1.5 text-xs text-slate-700">
-                <div class="font-bold text-slate-900">Key Capabilities:</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Under 2-second customer bill generation</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> EPSON & TVS 2"/3" thermal printer support</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Customer khata & balance tracker</div>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="pt-2 flex flex-wrap gap-1.5">
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Node.js</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SQLite</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">React</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Thermal API</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20know%20more%20about%20your%20Billing%20%26%20POS%20Software%20project." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-              <span>Inquire About This Solution</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2: Inventory & Stock Management -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between overflow-hidden">
-          <div>
-            <div class="bg-slate-900 text-white p-5 border-b border-slate-800">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span class="font-mono text-blue-400 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-blue-400"></span> Real-Time Ledger
-                </span>
-                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px]">Operations</span>
-              </div>
-              <h3 class="text-lg font-bold text-white">Inventory, Stock & Expense Manager</h3>
-              <p class="text-xs text-slate-300 mt-1">Wholesalers, distributors & retail outlets</p>
-            </div>
-
-            <div class="p-6 space-y-4">
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Automated inventory management system that eliminates stock leakage. Features real-time stock valuation, automated low-stock warnings, batch expiry dates, purchase inward entry, and daily profit/loss calculation.
-              </p>
-
-              <div class="space-y-1.5 text-xs text-slate-700">
-                <div class="font-bold text-slate-900">Key Capabilities:</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Automated low-stock & expiry notifications</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Supplier purchase orders & inward entry</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Daily sales vs expenses profit reporting</div>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="pt-2 flex flex-wrap gap-1.5">
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Node.js</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">PostgreSQL</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Tailwind CSS</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Excel Export</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20know%20more%20about%20your%20Inventory%20%26%20Stock%20System." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-              <span>Inquire About This Solution</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3: Business Websites & Product Catalogues -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between overflow-hidden">
-          <div>
-            <div class="bg-slate-900 text-white p-5 border-b border-slate-800">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span class="font-mono text-purple-400 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-purple-400"></span> WhatsApp Integrated
-                </span>
-                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px]">E-Commerce</span>
-              </div>
-              <h3 class="text-lg font-bold text-white">Business Websites & Product Catalogues</h3>
-              <p class="text-xs text-slate-300 mt-1">Local brands, boutiques & food businesses</p>
-            </div>
-
-            <div class="p-6 space-y-4">
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Mobile-first storefronts and online product catalogues where customers can browse items, filter by category, and place orders directly to the owner's WhatsApp number with zero expensive monthly platform fees.
-              </p>
-
-              <div class="space-y-1.5 text-xs text-slate-700">
-                <div class="font-bold text-slate-900">Key Capabilities:</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> 1-click WhatsApp cart checkout</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Fast load time (98+ Google Lighthouse score)</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Google Maps & Local SEO integration</div>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="pt-2 flex flex-wrap gap-1.5">
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">React</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Tailwind CSS</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">WhatsApp API</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Vercel</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20get%20a%20website%20or%20product%20catalogue%20for%20my%20business." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-              <span>Inquire About This Solution</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4: Custom Web Applications -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between overflow-hidden">
-          <div>
-            <div class="bg-slate-900 text-white p-5 border-b border-slate-800">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span class="font-mono text-amber-400 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-amber-400"></span> Specialized Workflows
-                </span>
-                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px]">Custom Apps</span>
-              </div>
-              <h3 class="text-lg font-bold text-white">Custom Small Business Web Applications</h3>
-              <p class="text-xs text-slate-300 mt-1">Mobile shops, service centres & repair desks</p>
-            </div>
-
-            <div class="p-6 space-y-4">
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Tailored business web tools including IMEI tracking with warranty card generation for mobile phone stores, digital weighing scale integration for poultry/meat shops, and jobcard status tracking for repair businesses.
-              </p>
-
-              <div class="space-y-1.5 text-xs text-slate-700">
-                <div class="font-bold text-slate-900">Key Capabilities:</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> IMEI / Serial number warranty receipts</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Electronic scale price-by-weight sync</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Customer repair tracking with SMS alerts</div>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="pt-2 flex flex-wrap gap-1.5">
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Node.js</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">REST APIs</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Serial Port</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">PDFKit</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I%20need%20a%20custom%20web%20application%20for%20my%20business." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-              <span>Inquire About This Solution</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 5: Cloud Deployment & Automation -->
-        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between overflow-hidden">
-          <div>
-            <div class="bg-slate-900 text-white p-5 border-b border-slate-800">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span class="font-mono text-cyan-400 flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span> DevOps Pipeline
-                </span>
-                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px]">Infrastructure</span>
-              </div>
-              <h3 class="text-lg font-bold text-white">Cloud Deployment & Automation</h3>
-              <p class="text-xs text-slate-300 mt-1">Dockerized servers, auto backups & SSL</p>
-            </div>
-
-            <div class="p-6 space-y-4">
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Production-ready cloud server setup for small business applications. Packages web applications with Docker Compose, configures Nginx reverse proxy with automated SSL renewal, and schedules nightly off-site database backups.
-              </p>
-
-              <div class="space-y-1.5 text-xs text-slate-700">
-                <div class="font-bold text-slate-900">Key Capabilities:</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> 1-command Docker Compose deployment</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Automated cron database backups to S3</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-600"></i> Nginx SSL & DDoS rate-limiting configuration</div>
-              </div>
-
-              <!-- Tech Badges -->
-              <div class="pt-2 flex flex-wrap gap-1.5">
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Docker</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Linux Bash</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Nginx</span>
-                <span class="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded">AWS EC2/S3</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-6 pt-0">
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20discuss%20Cloud%20Deployment%20or%20Server%20Setup." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-              <span>Inquire About This Solution</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Custom Request Card -->
-        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-7 text-white shadow-sm flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-              <i data-lucide="sparkles" class="w-6 h-6 text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold">Have a Custom Project in Mind?</h3>
-            <p class="text-xs sm:text-sm text-blue-100 leading-relaxed">
-              Need a specialized feature, bespoke business software, or an existing system fixed? Let's connect on WhatsApp to discuss your exact requirements.
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Fast counter billing system supporting barcode scanning, thermal receipt printing (2"/3"), GST tax calculations, and cash/UPI split payments without needing an internet connection.
             </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">React</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Node.js</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">SQLite</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Thermal API</span>
+            </div>
           </div>
-          <div class="pt-6">
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I%20have%20a%20custom%20software%20project%20I'd%20like%20to%20discuss." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold text-blue-700 bg-white hover:bg-blue-50 shadow-md transition-colors">
-              <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
-              <span>Start WhatsApp Discussion</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ==================== SERVICES SECTION ==================== -->
-  <section id="services" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-          What I Offer
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Freelance Services for Small Businesses
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600">
-          Transparent, affordable, and practical technical services to digitalize and automate your business operations.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
-            01
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">Custom POS & Billing Software</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Fast counter billing software tailored to your store, with barcode scanners, thermal printer integration, and offline-first data storage.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
-            02
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">Inventory & Expense Systems</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Track stock levels, set automated reorder thresholds, record supplier purchases, and view real-time daily profit and expenses.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
-            03
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">Business Websites & Catalogues</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            High-converting mobile websites and online product catalogues equipped with direct WhatsApp ordering and Google Maps visibility.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
-            04
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">Cloud Hosting & DevOps Setup</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Deploy your web applications on AWS or VPS with Docker, SSL certificates, automated database backups, and rock-solid uptime.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ==================== CONTACT & HIRE ME SECTION ==================== -->
-  <section id="contact" class="py-20 bg-slate-50/70 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-          Get In Touch
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Let’s Build Your Solution
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600">
-          Whether you need billing software for your shop, a clean website, or cloud deployment assistance, reach out directly.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        
-        <!-- Contact Cards (5 cols) -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-bold text-slate-900">Direct Contact Channels</h3>
-            
-            <!-- WhatsApp -->
-            <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'm%20interested%20in%20hiring%20you%20for%20a%20business%20software%20project." target="_blank" class="flex items-start gap-3.5 p-3 rounded-xl border border-slate-200 hover:border-emerald-400 transition-colors group">
-              <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                <i data-lucide="message-square" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <span class="text-xs font-medium text-slate-500 block">WhatsApp (Fastest Response)</span>
-                <span class="text-sm font-bold text-slate-900 group-hover:text-emerald-700">+91 98765 43210</span>
-                <p class="text-[11px] text-emerald-600 font-medium">Available for quick project chats</p>
-              </div>
-            </a>
-
-            <!-- Email -->
-            <a href="mailto:mahalakshmirathinam35@gmail.com" class="flex items-start gap-3.5 p-3 rounded-xl border border-slate-200 hover:border-blue-400 transition-colors group">
-              <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <i data-lucide="mail" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <span class="text-xs font-medium text-slate-500 block">Direct Email</span>
-                <span class="text-sm font-bold text-slate-900 group-hover:text-blue-600">mahalakshmirathinam35@gmail.com</span>
-                <p class="text-[11px] text-slate-500">For proposals & freelance inquiries</p>
-              </div>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/Maharathinam" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3.5 p-3 rounded-xl border border-slate-200 hover:border-slate-400 transition-colors group">
-              <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 group-hover:bg-slate-800 group-hover:text-white transition-colors">
-                <i data-lucide="github" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <span class="text-xs font-medium text-slate-500 block">GitHub</span>
-                <span class="text-sm font-bold text-slate-900">github.com/Maharathinam</span>
-                <p class="text-[11px] text-slate-500">View code repositories & projects</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="p-4 rounded-xl border border-blue-100 bg-blue-50/60 text-xs text-blue-900 flex items-start gap-3">
-            <i data-lucide="clock" class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5"></i>
-            <span><strong>Quick Turnaround:</strong> Typically respond within 1 hour on WhatsApp. Available for initial requirement calls and remote screen walkthroughs.</span>
-          </div>
-        </div>
-
-        <!-- Inquiry Form (7 cols) -->
-        <div class="lg:col-span-7">
-          <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-1">Send a Project Inquiry</h3>
-            <p class="text-xs sm:text-sm text-slate-500 mb-6">Tell me about your business or requirement and I will share a clear proposal.</p>
-
-            <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="text-xs font-semibold text-slate-700 block mb-1">Your Name</label>
-                  <input type="text" id="client-name" placeholder="e.g. Ramesh Kumar" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
-                </div>
-                <div>
-                  <label class="text-xs font-semibold text-slate-700 block mb-1">WhatsApp / Phone Number *</label>
-                  <input type="tel" id="client-phone" required placeholder="e.g. +91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600">
-                </div>
-              </div>
-
-              <div>
-                <label class="text-xs font-semibold text-slate-700 block mb-1">Service Needed</label>
-                <select id="client-service" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 text-slate-800">
-                  <option value="Billing & POS Software for Small Shop">Billing & POS Software for Small Shop</option>
-                  <option value="Inventory, Stock & Expense System">Inventory, Stock & Expense Management</option>
-                  <option value="Business Website & Product Catalogue">Business Website & WhatsApp Product Catalogue</option>
-                  <option value="Custom Small Business Web Application">Custom Small Business Web Application</option>
-                  <option value="Cloud Server Setup, Docker & Backups">Cloud Server Setup, Docker & Backups</option>
-                  <option value="Other Freelance Requirement">Other Custom Requirement</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="text-xs font-semibold text-slate-700 block mb-1">Brief Details of What You Need</label>
-                <textarea id="client-msg" rows="3" placeholder="e.g. I run a grocery store and need offline billing with a barcode scanner and thermal receipt printer." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600"></textarea>
-              </div>
-
-              <div class="pt-2 flex flex-col sm:flex-row gap-3">
-                <button type="button" onclick="sendWhatsAppInquiry()" class="flex-1 py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow-md shadow-emerald-600/20 flex items-center justify-center gap-2 transition-all">
-                  <i data-lucide="message-square" class="w-4 h-4"></i>
-                  <span>Send on WhatsApp (Instant Response)</span>
-                </button>
-                <button type="submit" class="py-3.5 px-6 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl transition-all">
-                  Submit Note
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800 text-sm">
-        
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs">
-            MR
-          </div>
-          <div>
-            <span class="font-bold text-white block">Mahalakshmi R</span>
-            <span class="text-xs text-slate-500">Business Solutions Developer • BCA & DevOps</span>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-6 text-xs sm:text-sm">
-          <a href="#about" class="hover:text-white transition-colors">About</a>
-          <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-          <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-          <a href="#services" class="hover:text-white transition-colors">Services</a>
-          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-        </div>
-
-        <div class="flex items-center gap-3 text-xs">
-          <a href="https://wa.me/919876543210" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 transition-colors flex items-center gap-1.5">
-            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-            <span>WhatsApp</span>
+          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20know%20more%20about%20your%20POS%20Software%20project." target="_blank" class="self-start text-xs font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap flex items-center gap-1">
+            <span>Inquire</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
-          <a href="mailto:mahalakshmirathinam35@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-blue-400 transition-colors flex items-center gap-1.5">
-            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all bg-white shadow-2xs flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div class="space-y-2 max-w-xl">
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-slate-900 text-base">Stock, Sales & Expense Manager</h4>
+              <span class="text-[10px] font-mono bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Operations</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Real-time stock valuation tool featuring automated low-stock warnings, purchase order inward entry, supplier ledgers, and profit & loss summaries.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Node.js</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">PostgreSQL</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Express</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Tailwind CSS</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20know%20more%20about%20your%20Stock%20Manager%20project." target="_blank" class="self-start text-xs font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap flex items-center gap-1">
+            <span>Inquire</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all bg-white shadow-2xs flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div class="space-y-2 max-w-xl">
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-slate-900 text-base">Business Website & Product Catalogue</h4>
+              <span class="text-[10px] font-mono bg-purple-50 text-purple-700 px-2 py-0.5 rounded font-semibold">E-Commerce</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Fast-loading responsive product showcase website with category filtering and instant 1-click WhatsApp cart checkout.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">React</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Tailwind CSS</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">WhatsApp API</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20know%20more%20about%20your%20Web%20Catalog%20project." target="_blank" class="self-start text-xs font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap flex items-center gap-1">
+            <span>Inquire</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all bg-white shadow-2xs flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div class="space-y-2 max-w-xl">
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-slate-900 text-base">Cloud Deployment & Automated Backups</h4>
+              <span class="text-[10px] font-mono bg-cyan-50 text-cyan-700 px-2 py-0.5 rounded font-semibold">DevOps</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Production containerized server setup with Docker Compose, automated midnight database backups to AWS S3, and Nginx SSL configuration.
+            </p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Docker</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Linux Bash</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Nginx</span>
+              <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">AWS S3</span>
+            </div>
+          </div>
+          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'd%20like%20to%20know%20more%20about%20your%20Cloud%20Deployment%20setup." target="_blank" class="self-start text-xs font-semibold text-blue-600 hover:text-blue-700 whitespace-nowrap flex items-center gap-1">
+            <span>Inquire</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT SECTION (SIMPLE & COMPACT) ==================== -->
+  <section id="contact" class="py-14 bg-slate-50/70">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-1">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600">Get In Touch</h2>
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Let's talk about your next project</h3>
+          <p class="text-xs sm:text-sm text-slate-500">Available for freelance opportunities and full-stack software development.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20chat." target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-sm flex items-center gap-2 transition-colors">
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            <span>WhatsApp Me</span>
+          </a>
+
+          <a href="mailto:mahalakshmirathinam35@gmail.com" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 transition-colors">
+            <i data-lucide="mail" class="w-4 h-4"></i>
             <span>Email</span>
           </a>
+
+          <a href="https://github.com/Maharathinam" target="_blank" class="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 transition-colors" title="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
         </div>
-
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© 2026 Mahalakshmi R. Built with clean HTML, Tailwind CSS & JavaScript.</p>
-        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white">
-          <i data-lucide="arrow-up" class="w-4 h-4"></i>
-        </button>
+      <div class="pt-8 text-center text-xs text-slate-400">
+        © 2026 Mahalakshmi R • Built with clean HTML, Tailwind CSS & JavaScript
       </div>
+
     </div>
-  </footer>
+  </section>
 
 
-  <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
-  <div class="fixed bottom-6 right-6 z-40">
-    <a href="https://wa.me/919876543210?text=Hi%20Mahalakshmi,%20I'm%20viewing%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Chat with Mahalakshmi on WhatsApp" class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all relative">
-      <i data-lucide="message-square" class="w-7 h-7"></i>
-      <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
-    </a>
-  </div>
-
-
-  <!-- ==================== INLINE JAVASCRIPT LOGIC ==================== -->
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Mobile Navigation Toggle
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    }
-    function closeMobileMenu() {
-      document.getElementById('mobile-menu').classList.add('hidden');
-    }
-
-    // WhatsApp Inquiry Action
-    function sendWhatsAppInquiry() {
-      const name = document.getElementById('client-name').value.trim() || 'Prospective Client';
-      const phone = document.getElementById('client-phone').value.trim() || 'Not specified';
-      const service = document.getElementById('client-service').value;
-      const msg = document.getElementById('client-msg').value.trim() || 'I am interested in discussing a project with you.';
-
-      const text = `*NEW FREELANCE INQUIRY - MAHALAKSHMI R*
----------------------------------------
-*Client:* ${name}
-*Phone/WhatsApp:* ${phone}
-*Requirement:* ${service}
-*Details:* ${msg}
-
-_Sent from personal portfolio website._`;
-
-      window.open('https://wa.me/919876543210?text=' + encodeURIComponent(text), '_blank');
-    }
-
-    // Submit Note Action
-    function handleInquirySubmit(e) {
-      e.preventDefault();
-      alert("Thank you! Your message has been received. I will reach out to your phone/email shortly.");
-      e.target.reset();
-    }
   </script>
 
 </body>
