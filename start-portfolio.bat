@@ -1,4 +1,4 @@
 @echo off
-title BizFlow Solutions - Portfolio
-echo Opening BizFlow Solutions portfolio in your browser...
+title Mahalakshmi R - Business Solutions Developer Portfolio
+echo Opening Mahalakshmi R's Portfolio in your browser...
 start index.html
